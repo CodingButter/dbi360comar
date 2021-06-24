@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 550px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,13 +12,9 @@ export const Container = styled.div`
     width: 100%;
   }
 `;
+export const ImageWrapper = styled.div``;
+export const Image = styled.img``;
 
-export const Image = styled.img`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media screen and (max-width: 820px) {
-    flex-direction: column;
-    width: 80%;
-  }
-`;
+export const NameWrapper = styled.div``;
+
+export const Name = styled.p``;

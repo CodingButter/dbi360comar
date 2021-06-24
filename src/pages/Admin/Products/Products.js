@@ -3,11 +3,13 @@ import Product from "../../../components/Product/Product";
 import { getProductsByUserId } from "../../../services/api";
 import { getUrlParams } from "../../../services";
 const Products = ({ location }) => {
-  const [products, getProducts] = useState([]);
-
+  const [products, getProducts] = useState({ products: [], user_id: null });
   const handleGetProducts = async (user_id) => {
-    const productArray = await getProductsByUserId(user_id);
-    getProducts(productArray);
+    const productObj = {
+      user_id,
+      products: await getProductsByUserId(user_id),
+    };
+    getProducts(productObj);
   };
 
   useEffect(() => {
@@ -15,8 +17,12 @@ const Products = ({ location }) => {
   }, []);
   return (
     <>
-      {products.map((product) => (
-        <Product productData={product} />
+      {products.products.map((product) => (
+        <Product
+          key={product.id}
+          productData={product}
+          user_id={products.user_id}
+        />
       ))}
     </>
   );

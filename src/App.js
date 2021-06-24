@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React from "react";
 import GlobalStyle from "./globalStyles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar, Footer } from "./components";
@@ -9,9 +9,9 @@ import Products from "./pages/Admin/Products/Products";
 import Contactus from "./pages/Contactus/Contactus";
 import ScrollToTop from "./components/ScrollToTop";
 
-function App({ location }) {
+function App() {
   return (
-    <>
+    <Router>
       <GlobalStyle />
       <ScrollToTop />
       <Navbar />
@@ -23,7 +23,7 @@ function App({ location }) {
         <Route path="/admin/products" exact component={Products} />
       </Switch>
       <Footer />
-    </>
+    </Router>
   );
 }
 
