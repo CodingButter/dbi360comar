@@ -63,7 +63,7 @@ const Navbar = () => {
                 <NavLinks to="/aboutus">About us</NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to="/admin/products">Products</NavLinks>
+                <NavLinks to="/dashboard">Dashboard</NavLinks>
               </NavItem>
               <NavItem>
                 <NavLinksURL
